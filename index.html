@@ -1,0 +1,172 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    
+</head>
+
+<body>
+  
+  <!-- Navigation bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    
+    
+    <button class="navbar-toggler" type="button">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="course.html">Course</a>
+        </li>
+      </ul>
+      
+     
+    </div>
+  </nav>
+
+  <!-- Header with headshot and contact info -->
+  <header class="jumbotron text-center bg-light">
+    <!-- <img src="headshot.jpg" class="rounded-circle"> -->
+    <img src="akhil.jpeg" class="rounded-circle"  alt="Profile picture" style="width:50px; height:auto;">
+    <h1>Akhil Kumar Yadav</h1>
+    <p>+1 513-289-3588 | 
+    <button onclick="toggleEmail()">Show/Hide Email</button>
+    <p id="email" style="display: none">akhilkumaryadav24@gmail.com</p>
+  </p>
+  </header>
+  
+  <!-- Resume content -->
+  <div class="container">
+    <p id="welcome-message"></p>
+    <a href="https://info.flagcounter.com/H94D"><img src="https://s11.flagcounter.com/count2/H94D/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
+    <h2>Resume</h2>
+    <p>LinkedIn: <a href="LinkedIn">https://www.linkedin.com/in/akhilmarkoll/</a></p>
+    
+  
+    <!-- Education -->
+    <h3>Education</h3>
+    <p>University of Cincinnati - Master of Science in Information Technology</p>
+    
+    <!-- Skills -->
+    <h3>Skills</h3>
+    <ul>
+      <li>C/C++, Python, Java, JavaScript</li>
+      <li>HTML, CSS, Bootstrap</li>  
+      <li>SAP ABAP</li>
+    </ul>
+
+    <!-- Experience -->  
+    <h3>Experience</h3>
+    
+    <h4>SAP ABAP Developer</h4>
+    <p>CGI Information Systems - Oct 2022 - July 2023</p>
+    
+    <h4>Junior SAP ABAP Developer</h4>  
+    <p>Cognizant Technology Solutions - Oct 2021 - Oct 2022</p>
+    
+    <!-- Projects -->
+    <h3>Projects</h3>   
+    <p>Paper Tower Building Robot - Led a team to build an automated paper tower building robot using Arduino and C++</p>
+    <div>
+      <h3>Joke</h3>
+      <p id="joke"></p>
+      <h3>Comic</h3>
+      <p id="comic"></p>
+    </div>
+    <div class="clock">
+      <div class="hour"></div>
+      <div class="minute"></div>
+      <div class="second"></div>
+  </div>
+  </div>
+  
+<script>
+
+    // Check for cookies and display welcome message
+    function setCookie(cname, cvalue, exdays) {
+    const d = new Date();
+    // Convert to EST by subtracting 5 hours (EST is UTC-5)
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000) - (-0.01*60 * 60 * 1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function checkCookie() {
+    let lastVisit = getCookie("lastVisit");
+    if (lastVisit != "") {
+        // Convert the UTC time in the cookie to EST for display
+        let lastVisitDate = new Date(lastVisit);
+        lastVisitDate.setTime(lastVisitDate.getTime() - (-0.01* 60 * 60 * 1000));
+        document.getElementById("welcome-message").innerHTML = "Welcome back! Your last visit was " + lastVisitDate.toLocaleString("en-US", {timeZone: "America/New_York"});
+    } else {
+        document.getElementById("welcome-message").innerHTML = "Welcome to my homepage!";
+    }
+    let now = new Date();
+    // Set the cookie with the current time in EST
+    setCookie("lastVisit", now.toUTCString(), 365);
+}
+
+    function getCookie(cname) {
+        let name = cname + "=";
+        let decodedCookie = decodeURIComponent(document.cookie);
+        let ca = decodedCookie.split(';');
+        for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    //Show/Hide Email
+     function toggleEmail() {
+            let email = document.getElementById('email');
+            email.style.display = (email.style.display === 'none' || email.style.display === '') ? 'block' : 'none';
+        }
+    // Fetch a new joke every 1 minute
+    function fetchJoke() {
+        fetch('https://v2.jokeapi.dev/joke/Any')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("joke").innerHTML = data.setup + " " + data.delivery;
+            });
+        setTimeout(fetchJoke, 60000);
+    }
+
+    // Fetch a comic from XKCD
+    function fetchComic() {
+        fetch('https://xkcd.com/info.0.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("comic").innerHTML = "<img src='" + data.img + "' alt='Comic'>";
+            });
+    }
+
+
+
+        
+
+
+    // Initialize functions
+    checkCookie();
+    fetchJoke();
+    fetchComic();
+</script>
+</body>
+</html>
