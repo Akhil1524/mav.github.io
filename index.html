@@ -9,16 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    
-    
 </head>
-
 <body>
-  
   <!-- Navigation bar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    
-    
     <button class="navbar-toggler" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,11 +25,8 @@
           <a class="nav-link" href="https://mav.github.io/waph.html">WAPH</a>
         </li>
       </ul>
-      
-     
     </div>
   </nav>
-
   <!-- Header with headshot and contact info -->
   <header class="jumbotron text-center bg-light">
     <!-- <img src="headshot.jpg" class="rounded-circle"> -->
@@ -46,15 +37,12 @@
     <p id="email" style="display: none">akhilkumaryadav24@gmail.com</p>
   </p>
   </header>
-  
   <!-- Resume content -->
   <div class="container">
     <p id="welcome-message"></p>
     <a href="https://info.flagcounter.com/H94D"><img src="https://s11.flagcounter.com/count2/H94D/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
     <h2>Resume</h2>
     <p>LinkedIn: <a href="LinkedIn">https://www.linkedin.com/in/akhilmarkoll/</a></p>
-    
-  
     <!-- Education -->
     <h3>Education</h3>
     <p>University of Cincinnati - Master of Science in Information Technology</p>
@@ -85,11 +73,6 @@
       <h3>Comic</h3>
       <p id="comic"></p>
     </div>
-    <div class="clock">
-      <div class="hour"></div>
-      <div class="minute"></div>
-      <div class="second"></div>
-  </div>
   </div>
   
 <script>
@@ -157,12 +140,6 @@ function checkCookie() {
                 document.getElementById("comic").innerHTML = "<img src='" + data.img + "' alt='Comic'>";
             });
     }
-
-
-
-        
-
-
     // Initialize functions
     checkCookie();
     fetchJoke();
