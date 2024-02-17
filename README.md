@@ -8,7 +8,7 @@
 
 **Short-bio**: I'm pursuing masters in Information Technology at University of Cincinnati. I'm is interested in software development and machine learning.  
 
-![Akhil's Headshot](images/headshot.jpeg)
+![Akhil's Headshot](images/Akhilheadshot.jpg)
 
 ## Repository Information
 
