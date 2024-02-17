@@ -34,7 +34,7 @@ I established a new public repository named `mav.github.io` and utilized it to c
 
 The link to access my website is: [https://mav.github.io/index.html](https://mav.github.io/index.html).
 
-![Portfolio Website](images/screenshot1.png)
+![Portfolio Website](images/Screenshot1.png)
 
 ### "Web Application Programming and Hacking" course and related hands-on projects on waph.html file
 
@@ -44,9 +44,7 @@ The link to access waph.html is: [https://mav.github.io/waph.html](https://mav.g
 
 The link to this page is accessible from the personal website, as depicted in the screenshot below:
 
-![waph.html page link on website](images/screenshot2.png)
-
-![waph.html page](images/screenshot3.png)
+![waph.html page](images/Screenshot2.png)
 
 ## Non-technical requirements
 
@@ -68,7 +66,7 @@ Code for integrating Flag Counter:
  <a href="https://info.flagcounter.com/H94D"><img src="https://s11.flagcounter.com/count2/H94D/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/" alt="Flag Counter" border="0"></a>
 ```
 
-![Flag Counter](images/screenshot4.png)
+![Flag Counter](images/Screenshot3.png)
 
 
 
@@ -81,26 +79,26 @@ Similar to Lab 2, I developed both a digital clock and an analog clock using Jav
 Source Code for the digital clock:
 ```JS
 <script type="text/javascript">
-						function displayTime(){
-							document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+function displayTime(){
+document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
 ```
 
 Source Code for Analog clock:
 ```JS
 <div id="digit-clock"></div>
-					<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
-					<script src="https://waph-uc.github.io/clock.js"></script>
-					<script> var canvas = document.getElementById("analog-clock");
-					var ctx = canvas.getContext("2d");
-					var radius = canvas.height / 2;
-					ctx.translate(radius,radius);
-					radius = radius * 0.90
-					setInterval(drawClock, 10);
+<canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+<script src="https://waph-uc.github.io/clock.js"></script>
+<script> var canvas = document.getElementById("analog-clock");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius,radius);
+radius = radius * 0.90
+setInterval(drawClock, 10);
 
-					function drawClock(){
-						drawFace(ctx, radius);
-						drawNumbers(ctx, radius);
-					    drawTime(ctx,radius);
+function drawClock(){
+drawFace(ctx, radius);
+drawNumbers(ctx, radius);
+drawTime(ctx,radius);
 ```
 
 Source Code for show/hide your email:
