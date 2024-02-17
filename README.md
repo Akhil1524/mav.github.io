@@ -245,7 +245,7 @@ function checkCookie() {
     }
 
 ```
-![revisit cookies](images/Screenshot7.png)
+![revisit cookies](images/Screenshot6.png)
 
 
 
