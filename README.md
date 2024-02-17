@@ -117,7 +117,7 @@ function showhideEmail() {
 
 Screenshot Showing Digital clock, Analog Clock, Show/hide your email:
 
-![Digital clock, Analog Clock, Show/hide your email](images/screenshot5.png)
+![Digital clock, Analog Clock, Show/hide your email](images/Screenshot4.png)
 
 
 ### One more Functionality of my choice
@@ -195,7 +195,7 @@ Integrated the Weatherbit API to fetch current weather information for Cincinnat
     });
 ```
 
-![Joke API and weather API](images/screenshot7.png)
+![Joke API and weather API](images/Screenshot5.png)
 
 ### Javascript Cookies
 
@@ -245,8 +245,8 @@ function checkCookie() {
     }
 
 ```
-![Fisrt visit](images/screenshot8.png)
-![revisit cookies](images/screenshot9.png)
+![Fisrt visit](images/Screenshot6.png)
+![revisit cookies](images/Screenshot7.png)
 
 
 
